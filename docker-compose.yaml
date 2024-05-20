@@ -1,0 +1,10 @@
+services:
+  test-dotnet-topic-publisher:
+    build:
+      context: .
+      target: production
+    image: test-dotnet-topic-publisher
+    container_name: test-dotnet-topic-publisher
+    environment:
+      AppInsights__ConnectionString: ${APPINSIGHTS_CONNECTIONSTRING}
+      AppInsights__CloudRole: test-dotnet-topic-publisher-local
